@@ -7,4 +7,4 @@ pull_request_rules:
       - check-success=deploy/netlify
     actions:
       merge:
-        method: merge
+        method: squash
