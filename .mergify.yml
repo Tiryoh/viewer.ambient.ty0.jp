@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: Automatic merge PRs from Dependabot
+    conditions:
+      - base=master
+      - author~=^dependabot(|-preview)\[bot\]$
+      - title~=bump [^\s]+ from ([\d]+)\..+ to \1\.
+      - check-success=deploy/netlify
+    actions:
+      merge:
+        method: merge
