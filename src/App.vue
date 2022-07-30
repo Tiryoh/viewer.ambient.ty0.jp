@@ -1,3 +1,7 @@
+<script setup>
+import AmbientViewer from "./components/AmbientViewer.vue";
+</script>
+
 <template>
   <div id="app">
     <AmbientViewer />
@@ -5,13 +9,11 @@
 </template>
 
 <script>
-import AmbientViewer from "./components/AmbientViewer.vue";
-
 export default {
   name: "app",
   components: {
-    AmbientViewer
-  }
+    AmbientViewer,
+  },
 };
 </script>
 

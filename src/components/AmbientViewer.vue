@@ -17,7 +17,6 @@
   </div>
 </template>
 
-
 <script>
 import axios from "axios";
 
@@ -25,30 +24,30 @@ export default {
   name: "AmbientViewer",
   data() {
     return {
-      info: null
+      info: null,
     };
   },
   methods: {
-    ambientAPICall: function() {
+    ambientAPICall: function () {
       axios
         .get("https://ambient.ty0.jp/api/v1/ambient")
-        .then(response => (this.info = response.data))
-        .catch(error => {
+        .then((response) => (this.info = response.data))
+        .catch((error) => {
           // eslint-disable-next-line no-console
           console.log(error);
           this.errored = true;
         });
     },
-    intervalFetchData: function() {
+    intervalFetchData: function () {
       setInterval(() => {
         this.ambientAPICall();
       }, 60);
-    }
+    },
   },
   mounted() {
     this.ambientAPICall();
     this.intervalFetchData();
-  }
+  },
 };
 </script>
 
